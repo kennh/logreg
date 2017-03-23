@@ -1,0 +1,44 @@
+1. make directory for your project
+2. npm init -y  *this creates your package.json file
+3. npm install express path mongoose body-parser express-session --save *and any other dependency that you will work with in your project
+4. now build out your file/folder system in basics
+5. mkdir client
+6. mkdir server
+7. cd server *build out folders in server  controllers, models, and config
+8. cd config *build out the mongoose.js and routes.js files
+9. cd client *build out paritals controllers factories and within the client make index.html and app.js
+10. outside of client make your server.js file *this should be at project level
+11. Build out your server.js file
+12. var express = require('express');
+13. var app = express();
+14. var path = require('path');
+15. var bp = require('body-parser');
+16. var port = 8000;
+17. app.use(bp.json());
+18. app.use(express.static(path.join(__dirname + '/client')));
+19. app.listen(port, function(){ console.log(`listening on ${port}`)});
+20. now test it with nodemon server
+21. you can write hello world into your index.html
+22. cdn google angular *grab the angular cdn snippet
+23. put that into the head of your index.html page and get rid of the .min 
+24. <script type="text/javascript" src='app.js'></script>
+25. in your app.js console.log some string just to see it working(this is testing if it works, remember BLT build it, link it, test it.)
+26. in your app.js type var app = angular.module('app',['dependecies need to be defined here]);
+27. in your index.html you need to link angular to it. <head ng-app="app">
+28. test to see if it works by console.log anything in your app.js file
+29. Front works, back works, now start partials.
+30. in app.js we need to set up the routes
+31. type: app.config(function($routeProvider){
+    $routeProvider
+        .when('/', {
+            templateUrl: 'paritals/logreg.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        })
+32. set the dependency in your var app: var app = angular.module('app',['ngRoute']);
+33. and put the routes onto: <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-routes.js"></script>
+34. now set up a logreg.html in your partials folder. and test it with a console.logreg
+35. to set up your partial go to your index.html type: <div ng-view></div> inside the body.  
+36.
+
